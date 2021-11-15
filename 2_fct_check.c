@@ -6,7 +6,7 @@
 /*   By: iderighe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 10:49:56 by iderighe          #+#    #+#             */
-/*   Updated: 2021/11/12 18:50:43 by iderighe         ###   ########.fr       */
+/*   Updated: 2021/11/15 14:31:37 by iderighe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ int	ft_check_minmax(t_arg *arg, int k)
 	{
 		tmp[j] = ft_atoi(arg->av[k]);
 		if (tmp[j] > 2147483647 || tmp[j] < -2147483648
-		|| ft_strlen(arg->av[k]) > 12)
+			|| ft_strlen(arg->av[k]) > 12)
 		{
 			write(2, "Error\n", 6);
 			ft_free_split(arg->av);

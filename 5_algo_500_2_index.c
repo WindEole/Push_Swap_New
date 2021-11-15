@@ -6,7 +6,7 @@
 /*   By: iderighe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 11:29:56 by iderighe          #+#    #+#             */
-/*   Updated: 2021/11/10 12:11:49 by iderighe         ###   ########.fr       */
+/*   Updated: 2021/11/15 16:04:36 by iderighe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ void	ft_define_first_hold(int *index_sa, t_var *var)
 	{
 		if (var->max_len <= 100)
 		{
-			if (index_sa[i] >= 0 && index_sa[i] <= 4)
+			if (index_sa[i] >= 0 && index_sa[i] <= 11)
 			{
 				var->pos_first = i;
 				return ;
@@ -95,7 +95,7 @@ void	ft_define_first_hold(int *index_sa, t_var *var)
 		}
 		else if (var->max_len > 100)
 		{
-			if (index_sa[i] >= 0 && index_sa[i] <= 11)
+			if (index_sa[i] >= 0 && index_sa[i] <= 16)
 			{
 				var->pos_first = i;
 				return ;
@@ -114,7 +114,7 @@ void	ft_define_second_hold(int *index_sa, t_var *var)
 	{
 		if (var->max_len <= 100)
 		{
-			if (index_sa[i] >= 0 && index_sa[i] <= 4)
+			if (index_sa[i] >= 0 && index_sa[i] <= 7)
 			{
 				var->pos_second = i;
 				return ;
@@ -123,7 +123,7 @@ void	ft_define_second_hold(int *index_sa, t_var *var)
 		}
 		else if (var->max_len > 100)
 		{
-			if (index_sa[i] >= 0 && index_sa[i] <= 11)
+			if (index_sa[i] >= 0 && index_sa[i] <= 16)
 			{
 				var->pos_second = i;
 				return ;

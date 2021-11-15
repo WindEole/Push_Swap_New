@@ -6,7 +6,7 @@
 /*   By: iderighe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 11:17:17 by iderighe          #+#    #+#             */
-/*   Updated: 2021/11/10 11:17:59 by iderighe         ###   ########.fr       */
+/*   Updated: 2021/11/15 14:32:28 by iderighe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,15 +44,14 @@ int	ft_define_pos_in_b_min(int xa, int *s_b, t_var *var)
 	{
 		if (xa < s_b[i] && s_b[i] < s_b[i + 1])
 		{
-			if (xa == var->min)
-			{
-				if (i == var->len_b - 1)
-					pos_in_b = i;
-				else
-					pos_in_b = i + 1;
-			}
+			if (i == var->len_b - 1 && xa == var->min)
+				pos_in_b = i;
 			else
+			{
 				pos_in_b = i + 1;
+				if (s_b[i + 1] > s_b[i])
+					break ;
+			}
 		}
 		i++;
 	}
