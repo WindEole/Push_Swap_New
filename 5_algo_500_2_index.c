@@ -6,7 +6,7 @@
 /*   By: iderighe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 11:29:56 by iderighe          #+#    #+#             */
-/*   Updated: 2021/11/15 16:04:36 by iderighe         ###   ########.fr       */
+/*   Updated: 2021/11/16 12:09:09 by iderighe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ void	ft_define_first_hold(int *index_sa, t_var *var)
 	{
 		if (var->max_len <= 100)
 		{
-			if (index_sa[i] >= 0 && index_sa[i] <= 11)
+			if (index_sa[i] >= 0 && index_sa[i] <= 8)
 			{
 				var->pos_first = i;
 				return ;
@@ -114,7 +114,7 @@ void	ft_define_second_hold(int *index_sa, t_var *var)
 	{
 		if (var->max_len <= 100)
 		{
-			if (index_sa[i] >= 0 && index_sa[i] <= 7)
+			if (index_sa[i] >= 0 && index_sa[i] <= 8)
 			{
 				var->pos_second = i;
 				return ;
