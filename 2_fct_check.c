@@ -6,7 +6,7 @@
 /*   By: iderighe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 10:49:56 by iderighe          #+#    #+#             */
-/*   Updated: 2021/11/15 14:31:37 by iderighe         ###   ########.fr       */
+/*   Updated: 2021/11/17 13:44:04 by iderighe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,15 @@ int	ft_check_dupl(t_arg *arg)
 	return (1);
 }
 
+static int	ft_minmax_free(t_arg *arg, long *tmp)
+{
+	if (arg->av[0][0] != '.' && arg->av[0][0] != '/')
+		ft_free_split(arg->av);
+	if (tmp)
+		free(tmp);
+	return (0);
+}
+
 int	ft_check_minmax(t_arg *arg, int k)
 {
 	long		*tmp;
@@ -75,7 +84,7 @@ int	ft_check_minmax(t_arg *arg, int k)
 
 	tmp = malloc(sizeof(long) * (arg->ac));
 	if (tmp == NULL)
-		return (0);
+		return (ft_minmax_free(arg, tmp));
 	j = 0;
 	if (arg->av[0][0] == '.' || arg->av[0][0] == '/')
 		k = 1;
@@ -86,9 +95,7 @@ int	ft_check_minmax(t_arg *arg, int k)
 			|| ft_strlen(arg->av[k]) > 12)
 		{
 			write(2, "Error\n", 6);
-			ft_free_split(arg->av);
-			free(tmp);
-			return (0);
+			return (ft_minmax_free(arg, tmp));
 		}
 		j++;
 		k++;

@@ -6,39 +6,16 @@
 /*   By: iderighe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 11:17:17 by iderighe          #+#    #+#             */
-/*   Updated: 2021/11/16 15:47:51 by iderighe         ###   ########.fr       */
+/*   Updated: 2021/11/17 12:18:51 by iderighe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_define_pos_in_b(int xa, int *s_b, t_var *var)
+static int	ft_define_pos_in_b_min(int xa, int *s_b, t_var *var, int i)
 {
-	int	i;
 	int	pos_in_b;
 
-	i = 0;
-	pos_in_b = 0;
-	while (i < var->len_b)
-	{
-		if (xa > s_b[i])
-			break ;
-		else
-			i++;
-	}
-	if (i == var->len_b || xa == var->min)
-		pos_in_b = ft_define_pos_in_b_min(xa, s_b, var);
-	else
-		pos_in_b = ft_define_pos_in_b_middle(xa, s_b, var);
-	return (pos_in_b);
-}
-
-int	ft_define_pos_in_b_min(int xa, int *s_b, t_var *var)
-{
-	int	i;
-	int	pos_in_b;
-
-	i = 0;
 	pos_in_b = 0;
 	while (i < var->len_b)
 	{
@@ -63,7 +40,7 @@ int	ft_define_pos_in_b_min(int xa, int *s_b, t_var *var)
 	return (pos_in_b);
 }
 
-int	ft_define_pos_in_b_middle(int xa, int *s_b, t_var *var)
+static int	ft_define_pos_in_b_middle(int xa, int *s_b, t_var *var)
 {
 	int	i;
 	int	j;
@@ -88,5 +65,26 @@ int	ft_define_pos_in_b_middle(int xa, int *s_b, t_var *var)
 		}
 		i++;
 	}
+	return (pos_in_b);
+}
+
+int	ft_define_pos_in_b(int xa, int *s_b, t_var *var)
+{
+	int	i;
+	int	pos_in_b;
+
+	i = 0;
+	pos_in_b = 0;
+	while (i < var->len_b)
+	{
+		if (xa > s_b[i])
+			break ;
+		else
+			i++;
+	}
+	if (i == var->len_b || xa == var->min)
+		pos_in_b = ft_define_pos_in_b_min(xa, s_b, var, 0);
+	else
+		pos_in_b = ft_define_pos_in_b_middle(xa, s_b, var);
 	return (pos_in_b);
 }

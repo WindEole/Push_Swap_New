@@ -6,7 +6,7 @@
 /*   By: iderighe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/10 12:48:58 by iderighe          #+#    #+#             */
-/*   Updated: 2021/11/10 12:23:26 by iderighe         ###   ########.fr       */
+/*   Updated: 2021/11/17 13:24:42 by iderighe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,38 @@ void	ft_free_split(char **str)
 	}
 }
 
+static int	ft_parsing(int *s_a, int *s_b, t_arg *arg, t_var *var)
+{
+	if (arg->av[0][0] != '.' && arg->av[0][0] != '/')
+		ft_free_split(arg->av);
+	if (!(ft_check_init_sort(s_a, *var)))
+	{
+		free(s_a);
+		free(s_b);
+		return (1);
+	}
+	if (var->len_a <= 3)
+		ft_algo_2_3(s_a, var);
+	else if (var->len_a > 3 && var->len_a <= 5)
+		ft_algo_4_5(s_a, s_b, var);
+	else
+		ft_algo_big_numbers(s_a, s_b, var);
+	free(s_a);
+	free(s_b);
+	return (1);
+}
+
+static int	ft_free_stack(t_arg *arg, int *s_a, int *s_b)
+{
+	if (arg->av[0][0] != '.' && arg->av[0][0] != '/')
+		ft_free_split(arg->av);
+	if (s_a)
+		free(s_a);
+	if (s_b)
+		free(s_b);
+	return (0);
+}
+
 int	ft_create_stack(t_arg *arg, t_var *var)
 {
 	int	*s_a;
@@ -52,7 +84,7 @@ int	ft_create_stack(t_arg *arg, t_var *var)
 	s_a = malloc(sizeof(int) * var->max_len);
 	s_b = malloc (sizeof(int) * var->max_len);
 	if (s_a == NULL || s_b == NULL)
-		return (0);
+		return (ft_free_stack(arg, s_a, s_b));
 	t[1] = 0;
 	t[0] = 0;
 	if (arg->av[0][0] == '.' || arg->av[0][0] == '/')
@@ -69,22 +101,5 @@ int	ft_create_stack(t_arg *arg, t_var *var)
 	}
 	if (!(ft_parsing(s_a, s_b, arg, var)))
 		return (0);
-	return (1);
-}
-
-int	ft_parsing(int *s_a, int *s_b, t_arg *arg, t_var *var)
-{
-	if (!(ft_check_init_sort(s_a, *var)))
-		return (0);
-	if (arg->av[0][0] != '.' && arg->av[0][0] != '/')
-		ft_free_split(arg->av);
-	if (var->len_a <= 3)
-		ft_algo_2_3(s_a, var);
-	else if (var->len_a > 3 && var->len_a <= 5)
-		ft_algo_4_5(s_a, s_b, var);
-	else
-		ft_algo_big_numbers(s_a, s_b, var);
-	free(s_a);
-	free(s_b);
 	return (1);
 }

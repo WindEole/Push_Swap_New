@@ -6,11 +6,33 @@
 /*   By: iderighe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/23 16:58:59 by iderighe          #+#    #+#             */
-/*   Updated: 2021/11/10 11:18:34 by iderighe         ###   ########.fr       */
+/*   Updated: 2021/11/17 13:28:39 by iderighe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+static void	ft_define_min_max(int *s_a, t_var *var)
+{
+	int	i;
+
+	i = 0;
+	var->min = s_a[0];
+	while (i < var->max_len)
+	{
+		if (s_a[i] < var->min)
+			var->min = s_a[i];
+		i++;
+	}
+	i = 0;
+	var->max = s_a[0];
+	while (i < var->max_len)
+	{
+		if (s_a[i] > var->max)
+			var->max = s_a[i];
+		i++;
+	}
+}
 
 int	ft_algo_big_numbers(int *s_a, int *s_b, t_var *var)
 {
@@ -39,25 +61,24 @@ int	ft_algo_big_numbers(int *s_a, int *s_b, t_var *var)
 	return (1);
 }
 
-void	ft_define_min_max(int *s_a, t_var *var)
+static void	ft_finish_sort(int *s_a, int *s_b, t_var *var, int pos_max)
 {
-	int	i;
+	int	j;
 
-	i = 0;
-	var->min = s_a[0];
-	while (i < var->max_len)
+	while (!(s_b[0] == var->max))
 	{
-		if (s_a[i] < var->min)
-			var->min = s_a[i];
-		i++;
+		if (pos_max <= var->len_b / 2)
+			ft_rotate_b(s_b, var);
+		else if (pos_max > var->len_b / 2)
+			ft_revrotate_b(s_b, var);
 	}
-	i = 0;
-	var->max = s_a[0];
-	while (i < var->max_len)
+	j = 0;
+	while (j < var->max_len)
 	{
-		if (s_a[i] > var->max)
-			var->max = s_a[i];
-		i++;
+		if (s_b[0] < s_b[1])
+			ft_swap_b(s_b, var);
+		ft_push_a(s_a, s_b, var);
+		j++;
 	}
 }
 
@@ -83,25 +104,4 @@ void	ft_loop_browse(int *s_a, int *s_b, int *index_sa, t_var *var)
 		i++;
 	}
 	ft_finish_sort(s_a, s_b, var, pos_max);
-}
-
-void	ft_finish_sort(int *s_a, int *s_b, t_var *var, int pos_max)
-{
-	int	j;
-
-	while (!(s_b[0] == var->max))
-	{
-		if (pos_max <= var->len_b / 2)
-			ft_rotate_b(s_b, var);
-		else if (pos_max > var->len_b / 2)
-			ft_revrotate_b(s_b, var);
-	}
-	j = 0;
-	while (j < var->max_len)
-	{
-		if (s_b[0] < s_b[1])
-			ft_swap_b(s_b, var);
-		ft_push_a(s_a, s_b, var);
-		j++;
-	}
 }

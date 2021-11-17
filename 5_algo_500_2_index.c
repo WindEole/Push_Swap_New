@@ -6,11 +6,75 @@
 /*   By: iderighe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 11:29:56 by iderighe          #+#    #+#             */
-/*   Updated: 2021/11/16 12:09:09 by iderighe         ###   ########.fr       */
+/*   Updated: 2021/11/17 16:49:55 by iderighe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+static void	ft_define_first_hold(int *index_sa, t_var *var)
+{
+	int	i;
+
+	i = 0;
+	while (i < var->len_a)
+	{
+		if (var->max_len <= 100)
+		{
+			if (index_sa[i] >= 0 && index_sa[i] <= 8)
+			{
+				var->pos_first = i;
+				return ;
+			}
+			i++;
+		}
+		else if (var->max_len > 100)
+		{
+			if (index_sa[i] >= 0 && index_sa[i] <= 16)
+			{
+				var->pos_first = i;
+				return ;
+			}
+			i++;
+		}
+	}
+}
+
+static void	ft_define_second_hold(int *index_sa, t_var *var)
+{
+	int	i;
+
+	i = var->len_a - 1;
+	while (i > 0)
+	{
+		if (var->max_len <= 100)
+		{
+			if (index_sa[i] >= 0 && index_sa[i] <= 8)
+			{
+				var->pos_second = i;
+				return ;
+			}
+			i--;
+		}
+		else if (var->max_len > 100)
+		{
+			if (index_sa[i] >= 0 && index_sa[i] <= 16)
+			{
+				var->pos_second = i;
+				return ;
+			}
+			i--;
+		}
+	}
+}
+
+static void	ft_amorce(int *s_a, int *s_b, int *index_sa, t_var *var)
+{
+	ft_define_first_hold(index_sa, var);
+	ft_define_second_hold(index_sa, var);
+	ft_move_to_top_a(s_a, s_b, var);
+	ft_loop_browse(s_a, s_b, index_sa, var);
+}
 
 int	ft_create_index(int *s_a, int *s_b, t_var *var)
 {
@@ -40,14 +104,6 @@ int	ft_create_index(int *s_a, int *s_b, t_var *var)
 	return (1);
 }
 
-void	ft_amorce(int *s_a, int *s_b, int *index_sa, t_var *var)
-{
-	ft_define_first_hold(index_sa, var);
-	ft_define_second_hold(index_sa, var);
-	ft_move_to_top_a(s_a, s_b, var);
-	ft_loop_browse(s_a, s_b, index_sa, var);
-}
-
 int	ft_create_new_index(int *s_a, t_var *var)
 {
 	int	t[2];
@@ -75,60 +131,4 @@ int	ft_create_new_index(int *s_a, t_var *var)
 	ft_define_second_hold(index_sa, var);
 	free(index_sa);
 	return (1);
-}
-
-void	ft_define_first_hold(int *index_sa, t_var *var)
-{
-	int	i;
-
-	i = 0;
-	while (i < var->len_a)
-	{
-		if (var->max_len <= 100)
-		{
-			if (index_sa[i] >= 0 && index_sa[i] <= 8)
-			{
-				var->pos_first = i;
-				return ;
-			}
-			i++;
-		}
-		else if (var->max_len > 100)
-		{
-			if (index_sa[i] >= 0 && index_sa[i] <= 16)
-			{
-				var->pos_first = i;
-				return ;
-			}
-			i++;
-		}
-	}
-}
-
-void	ft_define_second_hold(int *index_sa, t_var *var)
-{
-	int	i;
-
-	i = var->len_a - 1;
-	while (i > 0)
-	{
-		if (var->max_len <= 100)
-		{
-			if (index_sa[i] >= 0 && index_sa[i] <= 8)
-			{
-				var->pos_second = i;
-				return ;
-			}
-			i--;
-		}
-		else if (var->max_len > 100)
-		{
-			if (index_sa[i] >= 0 && index_sa[i] <= 16)
-			{
-				var->pos_second = i;
-				return ;
-			}
-			i--;
-		}
-	}
 }

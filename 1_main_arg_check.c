@@ -6,18 +6,17 @@
 /*   By: iderighe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 14:52:12 by iderighe          #+#    #+#             */
-/*   Updated: 2021/11/12 18:48:32 by iderighe         ###   ########.fr       */
+/*   Updated: 2021/11/17 13:18:51 by iderighe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_check_uarg_suite(t_arg *arg)
+static int	ft_check_uarg_suite(t_arg *arg)
 {
 	int	j;
 
-	j = 0;
-	if (arg->av[j] == NULL)
+	if (arg->av == NULL)
 	{
 		write(2, "Error\n", 6);
 		return (0);
@@ -34,7 +33,7 @@ int	ft_check_uarg_suite(t_arg *arg)
 	return (1);
 }
 
-int	ft_check_uarg(t_arg *arg)
+static int	ft_check_uarg(t_arg *arg)
 {
 	const char	*arg_initial;
 	int			j;
@@ -57,13 +56,11 @@ int	ft_check_uarg(t_arg *arg)
 			j++;
 	}
 	arg->av = (char **)ft_split(arg_initial, ' ');
-	if (arg->av == NULL)
-		return (0);
 	free((void *)arg_initial);
 	return (ft_check_uarg_suite(arg));
 }
 
-int	ft_check_narg_suite(t_arg *arg)
+static int	ft_check_narg_suite(t_arg *arg)
 {
 	int	i;
 	int	j;
@@ -92,7 +89,7 @@ int	ft_check_narg_suite(t_arg *arg)
 	return (1);
 }
 
-int	ft_check_narg(t_arg *arg)
+static int	ft_check_narg(t_arg *arg)
 {
 	int	i;
 

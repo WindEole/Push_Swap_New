@@ -6,7 +6,7 @@
 #    By: iderighe <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/09 11:35:21 by iderighe          #+#    #+#              #
-#    Updated: 2021/11/12 18:42:18 by iderighe         ###   ########.fr        #
+#    Updated: 2021/11/17 12:02:40 by iderighe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 NAME	=	push_swap
@@ -26,29 +26,22 @@ SRCS	=	1_main_arg_check.c \
 			lib_utils.c \
 			lib_utils_split.c \
 
-
 OBJ		=	$(SRCS:.c=.o)
 
-CC		=	gcc
+CC		=	clang
 
 RM		=	rm -f
 
-CFLAGS	=	-Wall -Wextra -Werror -fsanitize=address -g3
-
-DEPS	=	push_swap.h
+CFLAGS	=	-Wall -Wextra -Werror
 
 
 all		:	$(NAME)
 
-%.o		:	%.c $(DEPS)
-			$(CC) -c -o $@ $< $(CFLAGS)
-
-.c.o	:	
-			$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
+%.o		:	%.c
+			$(CC) $(CFLAGS) -o $@ -c $<
 
 $(NAME)	:	$(OBJ)
 			$(CC) $(CFLAGS) -o $(NAME) $(SRCS)
-
 
 clean	:	
 			$(RM) $(OBJ)
@@ -57,3 +50,5 @@ fclean	:	clean
 			$(RM) $(NAME)
 
 re		:	fclean all
+
+.phony	:	all fclean clean
