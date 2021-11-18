@@ -6,7 +6,7 @@
 /*   By: iderighe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 11:32:35 by iderighe          #+#    #+#             */
-/*   Updated: 2021/11/17 15:12:52 by iderighe         ###   ########.fr       */
+/*   Updated: 2021/11/18 17:34:05 by iderighe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static void	ft_insert_in_b(int *s_a, int *s_b, t_var *var)
 	{
 		i = 0;
 		pos_in_b = var->len_b - pos_in_b;
-		if (s_a[0] != var->min)
+		if (s_a[0] != var->min || (s_a[0] == var->min && pos_in_b > 0))
 		{
 			while (i < pos_in_b)
 			{
@@ -35,6 +35,8 @@ static void	ft_insert_in_b(int *s_a, int *s_b, t_var *var)
 		}
 	}
 	ft_push_b(s_a, s_b, var);
+	if (var->len_b == var->max_len)
+		return ;
 }
 
 static void	ft_move_pos_second(int *s_a, int *s_b, t_var *var,

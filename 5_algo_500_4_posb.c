@@ -6,7 +6,7 @@
 /*   By: iderighe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 11:17:17 by iderighe          #+#    #+#             */
-/*   Updated: 2021/11/17 12:18:51 by iderighe         ###   ########.fr       */
+/*   Updated: 2021/11/18 14:47:19 by iderighe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,3 +88,34 @@ int	ft_define_pos_in_b(int xa, int *s_b, t_var *var)
 		pos_in_b = ft_define_pos_in_b_middle(xa, s_b, var);
 	return (pos_in_b);
 }
+
+/*int	ft_define_pos_in_b(int xa, int *s_b, t_var *var)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	j = var->min - 1;
+printf(GREEN"var->len_b = %d"RESET"\n", var->len_b);
+	if (var->len_b == 1)
+		return (i);
+	while (i < var->len_b)
+	{
+		if (s_b[i] > j)
+			j = s_b[i];
+		if (i > 0)
+		{
+			if (xa > s_b[i] && xa < s_b[i - 1])
+				return (i);
+		}
+		else if (xa > s_b[i] && xa < s_b[var->len_b - 1])
+			return (i);
+		i++;
+	}
+	i = 0;
+printf(RED"xa = %d, j = %d"RESET"\n", xa, j);
+	while (s_b[i] != j)
+		i++;
+printf(CYAN"i = %d, s_b[i] = %d"RESET"\n", i, s_b[i]);
+	return (i);
+}*/

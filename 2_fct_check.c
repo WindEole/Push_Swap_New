@@ -6,7 +6,7 @@
 /*   By: iderighe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 10:49:56 by iderighe          #+#    #+#             */
-/*   Updated: 2021/11/17 13:44:04 by iderighe         ###   ########.fr       */
+/*   Updated: 2021/11/18 17:34:51 by iderighe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,7 +119,7 @@ int	ft_check_sort(int *s_a, t_var var)
 			YELLOW" nb total d'operation = %d"RESET"\n", var.add);
 			j = 0;
 			while (j < var.max_len)
-			{
+		{
 printf(RED"s_a[%d] = %d"RESET"\n", j, s_a[j]);
 				j++;
 			}

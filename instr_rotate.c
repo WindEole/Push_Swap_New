@@ -6,7 +6,7 @@
 /*   By: iderighe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/16 11:02:30 by iderighe          #+#    #+#             */
-/*   Updated: 2021/11/05 10:26:16 by iderighe         ###   ########.fr       */
+/*   Updated: 2021/11/18 17:33:30 by iderighe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,8 @@ void	ft_rotate_b(int *s_b, t_var *var)
 		tmp = s_b[0];
 		while (i < var->len_b)
 		{
-			s_b[i] = s_b[i + 1];
+			if (i + 1 < var->len_b)
+				s_b[i] = s_b[i + 1];
 			i++;
 		}
 		s_b[i - 1] = tmp;

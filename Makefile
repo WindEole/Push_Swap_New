@@ -6,7 +6,7 @@
 #    By: iderighe <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/09 11:35:21 by iderighe          #+#    #+#              #
-#    Updated: 2021/11/17 12:02:40 by iderighe         ###   ########.fr        #
+#    Updated: 2021/11/18 17:47:41 by iderighe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 NAME	=	push_swap
@@ -51,4 +51,4 @@ fclean	:	clean
 
 re		:	fclean all
 
-.phony	:	all fclean clean
+.PHONY	:	all fclean clean re
