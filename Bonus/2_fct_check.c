@@ -6,11 +6,11 @@
 /*   By: iderighe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 10:49:56 by iderighe          #+#    #+#             */
-/*   Updated: 2021/11/21 16:35:28 by iderighe         ###   ########.fr       */
+/*   Updated: 2021/11/21 18:46:22 by iderighe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
 
 int	ft_check_init_sort(int *s_a, t_var var)
 {

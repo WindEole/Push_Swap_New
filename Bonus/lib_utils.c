@@ -6,11 +6,11 @@
 /*   By: iderighe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/23 14:29:04 by iderighe          #+#    #+#             */
-/*   Updated: 2021/11/21 21:56:44 by iderighe         ###   ########.fr       */
+/*   Updated: 2021/11/21 18:51:12 by iderighe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
 
 long	ft_atoi(const char *s)
 {
@@ -73,8 +73,6 @@ int	ft_strlen(const char *str)
 	int	i;
 
 	i = 0;
-	if (!str)
-		return (0);
 	while (str[i] != '\0')
 		i++;
 	return (i);

@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   5_algo_500_1_global.c                              :+:      :+:    :+:   */
+/*   5_algo_500_1_list.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iderighe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/23 16:58:59 by iderighe          #+#    #+#             */
-/*   Updated: 2021/11/21 18:32:37 by iderighe         ###   ########.fr       */
+/*   Updated: 2021/11/21 22:45:16 by iderighe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
 
 t_adm	*ft_list_init_b(t_adm *adm)
 {
@@ -80,7 +80,7 @@ int	ft_lstlen(t_adm *adm)
 	return (i);
 }
 
-void	ft_create_index(t_adm *adm)
+/*void	ft_create_index(t_adm *adm)
 {
 	t_dll	*now[2];
 	int		x[2];
@@ -99,4 +99,4 @@ void	ft_create_index(t_adm *adm)
 		}
 		now[1] = now[1]->next;
 	}
-}
+}*/

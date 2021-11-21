@@ -6,11 +6,11 @@
 /*   By: iderighe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/10 12:48:58 by iderighe          #+#    #+#             */
-/*   Updated: 2021/11/20 23:52:36 by iderighe         ###   ########.fr       */
+/*   Updated: 2021/11/21 23:07:44 by iderighe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
 
 t_var	ft_init_var(int max_len)
 {
@@ -25,6 +25,20 @@ t_var	ft_init_var(int max_len)
 	var.pos_second = -1;
 	var.max_len = max_len;
 	return (var);
+}
+
+static int	ft_appel_gnl(t_var *var, t_adm *adm)
+{
+	char	*line;
+	int		ret;
+
+	ret = get_next_line(1, &line);
+	free(&line);
+	while (ret == 1)
+	{
+		ret = get_next_line(1, &line);
+		free(&line);
+	}
 }
 
 static int	ft_stack_to_list(int *s_a, int *s_b, t_var *var)
@@ -48,34 +62,8 @@ static int	ft_stack_to_list(int *s_a, int *s_b, t_var *var)
 			return (ft_free_stack(adm, NULL, s_a, s_b));
 		i++;
 	}
-	ft_create_index(adm[0]);
-	ft_push(adm[0], adm[1], "pb\n");
-	ft_tri(adm[0], adm[1], now, 0);
+	ft_appel_gnl(NULL, *adm);
 	ft_free_stack(adm, NULL, NULL, NULL);
-	return (1);
-}
-
-static int	ft_algo_big_numbers(int *s_a, int *s_b, t_var *var)
-{
-	int	i;
-	int	j;
-	int	reverse_sort;
-
-	reverse_sort = ft_check_reverse_sort(s_a, var);
-	if (reverse_sort == 1)
-	{
-		i = var->len_a;
-		while (i-- > 1)
-		{
-			ft_revrotate_a(s_a, var);
-			ft_push_b(s_a, s_b, var);
-		}
-		j = var->len_b;
-		while (j-- > 0)
-			ft_push_a(s_a, s_b, var);
-	}
-	if (reverse_sort == 0)
-		ft_stack_to_list(s_a, s_b, var);
 	return (1);
 }
 
@@ -89,12 +77,10 @@ static int	ft_parsing(int *s_a, int *s_b, t_arg *arg, t_var *var)
 		free(s_b);
 		return (1);
 	}
-	if (var->len_a <= 3)
-		ft_algo_2_3(s_a, var);
-	else if (var->len_a > 3 && var->len_a <= 5)
-		ft_algo_4_5(s_a, s_b, var);
+	if (var->len_a <= 5)
+		ft_appel_gnl(var, NULL);
 	else
-		ft_algo_big_numbers(s_a, s_b, var);
+		ft_stack_to_list(s_a, s_b, var);
 	ft_free_stack(NULL, NULL, s_a, s_b);
 	return (1);
 }
