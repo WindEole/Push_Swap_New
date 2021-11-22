@@ -6,7 +6,7 @@
 /*   By: iderighe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/19 16:01:50 by iderighe          #+#    #+#             */
-/*   Updated: 2021/11/21 18:49:59 by iderighe         ###   ########.fr       */
+/*   Updated: 2021/11/22 12:31:40 by iderighe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,6 @@ void	ft_swap(t_adm *adm, char *s)
 	y = adm->head->arg;
 	adm->head->arg = adm->head->next->arg;
 	adm->head->next->arg = y;
-	y = adm->head->i;
-	adm->head->i = adm->head->next->i;
-	adm->head->next->i = y;
 	if (s)
 		write(1, &s[0], 3);
 }

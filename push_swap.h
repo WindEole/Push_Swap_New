@@ -6,7 +6,7 @@
 /*   By: iderighe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 11:47:11 by iderighe          #+#    #+#             */
-/*   Updated: 2021/11/20 23:57:47 by iderighe         ###   ########.fr       */
+/*   Updated: 2021/11/22 11:13:10 by iderighe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,6 +123,7 @@ void	ft_free_list(t_adm *adm);
 int		ft_free_stack(t_adm **adm, t_arg *arg, int *s_a, int *s_b);
 void	ft_rr(t_adm *adma, t_adm *admb);
 void	ft_rrr(t_adm *adma, t_adm *admb);
+void	ft_ss(t_adm *adma, t_adm *admb);
 
 // instr_swap_push.c
 

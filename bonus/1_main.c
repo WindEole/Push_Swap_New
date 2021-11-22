@@ -6,7 +6,7 @@
 /*   By: iderighe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 14:52:12 by iderighe          #+#    #+#             */
-/*   Updated: 2021/11/21 18:46:04 by iderighe         ###   ########.fr       */
+/*   Updated: 2021/11/22 13:57:44 by iderighe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,9 +91,10 @@ int	main(int argc, char **argv)
 	if (!(ft_check_arg(s, &arg, 0)) || !(ft_check_dupl(&arg)))
 		return (1);
 	var = ft_init_var(ft_rows(&arg));
-	if (!(ft_check_minmax(&arg, 0)))
+	if (!(ft_check_minmax(&arg, 0)) || !(ft_create_stack(&arg, &var)))
+	{
+		ft_free_split(arg.av);
 		return (1);
-	if (!(ft_create_stack(&arg, &var)))
-		return (1);
+	}
 	return (0);
 }

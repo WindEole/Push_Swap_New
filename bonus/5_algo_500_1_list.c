@@ -6,7 +6,7 @@
 /*   By: iderighe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/23 16:58:59 by iderighe          #+#    #+#             */
-/*   Updated: 2021/11/21 22:45:16 by iderighe         ###   ########.fr       */
+/*   Updated: 2021/11/22 14:41:28 by iderighe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ t_adm	*ft_list_init_a(t_adm *adm, t_dll *dll, int first)
 	adm->head = dll;
 	adm->tail = dll;
 	dll->arg = first;
-	dll->i = 0;
 	dll->next = adm->head;
 	dll->prev = adm->tail;
 	return (adm);
@@ -51,15 +50,16 @@ int	ft_list_inser(t_adm *adm, int n)
 	if (new == NULL)
 	{
 		write(2, "Error\n", 6);
+		free(new);
 		return (0);
 	}
 	new->arg = n;
-	new->i = 0;
 	new->next = adm->head;
 	new->prev = adm->tail;
 	adm->head->prev = new;
 	adm->tail->next = new;
 	adm->tail = new;
+printf(RED"[%d]"RESET, new->arg); 
 	return (1);
 }
 
@@ -79,24 +79,3 @@ int	ft_lstlen(t_adm *adm)
 	}
 	return (i);
 }
-
-/*void	ft_create_index(t_adm *adm)
-{
-	t_dll	*now[2];
-	int		x[2];
-
-	now[1] = adm->head;
-	x[0] = 0;
-	while (x[0]++ < ft_lstlen(adm))
-	{
-		now[0] = adm->head;
-		x[1] = 0;
-		while (x[1]++ < ft_lstlen(adm))
-		{
-			if (now[1]->arg > now[0]->arg)
-				now[1]->i++;
-			now[0] = now[0]->next;
-		}
-		now[1] = now[1]->next;
-	}
-}*/

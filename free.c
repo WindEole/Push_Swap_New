@@ -6,7 +6,7 @@
 /*   By: iderighe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/20 10:05:09 by iderighe          #+#    #+#             */
-/*   Updated: 2021/11/20 13:32:37 by iderighe         ###   ########.fr       */
+/*   Updated: 2021/11/22 11:08:46 by iderighe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,4 +70,11 @@ void	ft_rrr(t_adm *adma, t_adm *admb)
 	ft_revrot(adma, NULL);
 	ft_revrot(admb, NULL);
 	write (1, "rrr\n", 4);
+}
+
+void	ft_ss(t_adm *adma, t_adm *admb)
+{
+	ft_swap(adma, NULL);
+	ft_swap(admb, NULL);
+	write (1, "ss\n", 3);
 }

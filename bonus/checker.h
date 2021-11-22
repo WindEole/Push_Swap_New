@@ -6,7 +6,7 @@
 /*   By: iderighe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 11:47:11 by iderighe          #+#    #+#             */
-/*   Updated: 2021/11/21 23:05:11 by iderighe         ###   ########.fr       */
+/*   Updated: 2021/11/22 12:13:10 by iderighe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,19 +52,13 @@ typedef struct s_var
 typedef struct s_dll
 {
 	int				arg;
-	int				i;
-	int				opa;
-	int				opb;
-	int				opr;
-	int				opt;
-	int				rev;
-	int				revb;
 	struct s_dll	*next;
 	struct s_dll	*prev;
 }	t_dll;
 
 typedef struct s_adm
 {
+	int				base;
 	struct s_dll	*head;
 	struct s_dll	*tail;
 }	t_adm;
@@ -96,30 +90,31 @@ int		ft_lstlen(t_adm *adm);
 void	ft_free_split(char **str);
 void	ft_free_list(t_adm *adm);
 int		ft_free_stack(t_adm **adm, t_arg *arg, int *s_a, int *s_b);
-void	ft_rr(t_adm *adma, t_adm *admb);
-void	ft_rrr(t_adm *adma, t_adm *admb);
+void	ft_rr(t_adm *adma, t_adm *admb, char *s);
+void	ft_rrr(t_adm *adma, t_adm *admb, char *s);
+void	ft_ss(t_adm *adma, t_adm *admb, char *s);
 
 // instr_swap_push.c
 
-void	ft_swap_a(int *s_a, t_var *var);
-void	ft_swap_b(int *s_b, t_var *var);
-void	ft_swap_ab(int *s_a, int *s_b, t_var *var);
-void	ft_push_a(int *s_a, int *s_b, t_var *var);
-void	ft_push_b(int *s_a, int *s_b, t_var *var);
+//void	ft_swap_a(int *s_a, t_var *var);
+//void	ft_swap_b(int *s_b, t_var *var);
+//void	ft_swap_ab(int *s_a, int *s_b, t_var *var);
+//void	ft_push_a(int *s_a, int *s_b, t_var *var);
+//void	ft_push_b(int *s_a, int *s_b, t_var *var);
 
 // instr_rotate.c
 
-void	ft_rotate_a(int *s_a, t_var *var);
-void	ft_rotate_b(int *s_b, t_var *var);
-void	ft_rotate_ab(int *s_a, int *s_b, t_var *var);
-void	ft_rotate_ab_suite(int *s_b, t_var *var);
+//void	ft_rotate_a(int *s_a, t_var *var);
+//void	ft_rotate_b(int *s_b, t_var *var);
+//void	ft_rotate_ab(int *s_a, int *s_b, t_var *var);
+//void	ft_rotate_ab_suite(int *s_b, t_var *var);
 
 // instr_revrotate.c
 
-void	ft_revrotate_a(int *s_a, t_var *var);
-void	ft_revrotate_b(int *s_b, t_var *var);
-void	ft_revrotate_ab(int *s_a, int *s_b, t_var *var);
-void	ft_revrotate_ab_suite(int *s_b, t_var *var);
+//void	ft_revrotate_a(int *s_a, t_var *var);
+//void	ft_revrotate_b(int *s_b, t_var *var);
+//void	ft_revrotate_ab(int *s_a, int *s_b, t_var *var);
+//void	ft_revrotate_ab_suite(int *s_b, t_var *var);
 
 // instr_list.c
 
