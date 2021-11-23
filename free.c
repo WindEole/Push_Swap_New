@@ -6,7 +6,7 @@
 /*   By: iderighe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/20 10:05:09 by iderighe          #+#    #+#             */
-/*   Updated: 2021/11/22 11:08:46 by iderighe         ###   ########.fr       */
+/*   Updated: 2021/11/23 12:25:50 by iderighe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,25 +56,4 @@ int	ft_free_stack(t_adm **adm, t_arg *arg, int *s_a, int *s_b)
 	if (s_b)
 		free(s_b);
 	return (0);
-}
-
-void	ft_rr(t_adm *adma, t_adm *admb)
-{
-	ft_rot(adma, NULL);
-	ft_rot(admb, NULL);
-	write (1, "rr\n", 3);
-}
-
-void	ft_rrr(t_adm *adma, t_adm *admb)
-{
-	ft_revrot(adma, NULL);
-	ft_revrot(admb, NULL);
-	write (1, "rrr\n", 4);
-}
-
-void	ft_ss(t_adm *adma, t_adm *admb)
-{
-	ft_swap(adma, NULL);
-	ft_swap(admb, NULL);
-	write (1, "ss\n", 3);
 }

@@ -6,7 +6,7 @@
 /*   By: iderighe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/23 16:58:59 by iderighe          #+#    #+#             */
-/*   Updated: 2021/11/22 14:41:28 by iderighe         ###   ########.fr       */
+/*   Updated: 2021/11/23 12:40:06 by iderighe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,6 @@ int	ft_list_inser(t_adm *adm, int n)
 	adm->head->prev = new;
 	adm->tail->next = new;
 	adm->tail = new;
-printf(RED"[%d]"RESET, new->arg); 
 	return (1);
 }
 

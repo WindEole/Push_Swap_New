@@ -6,7 +6,7 @@
 /*   By: iderighe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 11:47:11 by iderighe          #+#    #+#             */
-/*   Updated: 2021/11/22 11:13:10 by iderighe         ###   ########.fr       */
+/*   Updated: 2021/11/23 12:33:23 by iderighe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,9 +121,6 @@ int		ft_define_pos_in_b(int xa, int *s_b, t_var *var);*/
 void	ft_free_split(char **str);
 void	ft_free_list(t_adm *adm);
 int		ft_free_stack(t_adm **adm, t_arg *arg, int *s_a, int *s_b);
-void	ft_rr(t_adm *adma, t_adm *admb);
-void	ft_rrr(t_adm *adma, t_adm *admb);
-void	ft_ss(t_adm *adma, t_adm *admb);
 
 // instr_swap_push.c
 
@@ -161,6 +158,12 @@ void	ft_rot(t_adm *adm, char *s);
 void	ft_revrot(t_adm *adm, char *s);
 void	ft_swap(t_adm *adm, char *s);
 void	ft_push(t_adm *lstfrom, t_adm *lstto, char *s);
+
+// instr_list_suite.c
+
+void	ft_rr(t_adm *adma, t_adm *admb);
+void	ft_rrr(t_adm *adma, t_adm *admb);
+void	ft_ss(t_adm *adma, t_adm *admb);
 
 // Libft
 

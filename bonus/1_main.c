@@ -6,7 +6,7 @@
 /*   By: iderighe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 14:52:12 by iderighe          #+#    #+#             */
-/*   Updated: 2021/11/22 13:57:44 by iderighe         ###   ########.fr       */
+/*   Updated: 2021/11/23 12:18:06 by iderighe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,17 @@ static int	ft_check_char(char *s, int j)
 	return (0);
 }
 
+static int	ft_rows(t_arg *arg)
+{
+	int	i;
+
+	i = 0;
+	while (arg->av[i])
+		i++;
+	arg->ac = i + 1;
+	return (i);
+}
+
 static int	ft_check_arg(char *s, t_arg *arg, int j)
 {
 	while (s[j] != '\0')
@@ -57,17 +68,6 @@ static int	ft_check_arg(char *s, t_arg *arg, int j)
 	}
 	free(s);
 	return (1);
-}
-
-int	ft_rows(t_arg *arg)
-{
-	int	i;
-
-	i = 0;
-	while (arg->av[i])
-		i++;
-	arg->ac = i + 1;
-	return (i);
 }
 
 int	main(int argc, char **argv)

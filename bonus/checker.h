@@ -6,7 +6,7 @@
 /*   By: iderighe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 11:47:11 by iderighe          #+#    #+#             */
-/*   Updated: 2021/11/22 12:13:10 by iderighe         ###   ########.fr       */
+/*   Updated: 2021/11/23 15:32:05 by iderighe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@ typedef struct s_var
 {
 	int	len_a;
 	int	len_b;
-	int	add;
 	int	min;
 	int	max;
 	int	pos_first;
@@ -69,13 +68,11 @@ int		ft_check_init_sort(int *s_a, t_var var);
 int		ft_check_reverse_sort(int *s_a, t_var *var);
 int		ft_check_dupl(t_arg *arg);
 int		ft_check_minmax(t_arg *arg, int k);
-//int		ft_check_sort(int *s_a, t_var var);
 
 // 3_stack_parse.c
 
 t_var	ft_init_var(int max_len);
 int		ft_create_stack(t_arg *arg, t_var *var);
-
 
 // 5_algo_500_1_list.c
 
@@ -83,45 +80,25 @@ t_adm	*ft_list_init_b(t_adm *adm);
 t_adm	*ft_list_init_a(t_adm *adm, t_dll *dll, int first);
 int		ft_list_inser(t_adm *adm, int n);
 int		ft_lstlen(t_adm *adm);
-//void	ft_create_index(t_adm *adm);
 
 // free.c
 
 void	ft_free_split(char **str);
 void	ft_free_list(t_adm *adm);
 int		ft_free_stack(t_adm **adm, t_arg *arg, int *s_a, int *s_b);
-void	ft_rr(t_adm *adma, t_adm *admb, char *s);
-void	ft_rrr(t_adm *adma, t_adm *admb, char *s);
-void	ft_ss(t_adm *adma, t_adm *admb, char *s);
-
-// instr_swap_push.c
-
-//void	ft_swap_a(int *s_a, t_var *var);
-//void	ft_swap_b(int *s_b, t_var *var);
-//void	ft_swap_ab(int *s_a, int *s_b, t_var *var);
-//void	ft_push_a(int *s_a, int *s_b, t_var *var);
-//void	ft_push_b(int *s_a, int *s_b, t_var *var);
-
-// instr_rotate.c
-
-//void	ft_rotate_a(int *s_a, t_var *var);
-//void	ft_rotate_b(int *s_b, t_var *var);
-//void	ft_rotate_ab(int *s_a, int *s_b, t_var *var);
-//void	ft_rotate_ab_suite(int *s_b, t_var *var);
-
-// instr_revrotate.c
-
-//void	ft_revrotate_a(int *s_a, t_var *var);
-//void	ft_revrotate_b(int *s_b, t_var *var);
-//void	ft_revrotate_ab(int *s_a, int *s_b, t_var *var);
-//void	ft_revrotate_ab_suite(int *s_b, t_var *var);
 
 // instr_list.c
 
-void	ft_rot(t_adm *adm, char *s);
-void	ft_revrot(t_adm *adm, char *s);
-void	ft_swap(t_adm *adm, char *s);
-void	ft_push(t_adm *lstfrom, t_adm *lstto, char *s);
+int		ft_rot(t_adm *adm, char *s);
+int		ft_revrot(t_adm *adm, char *s);
+int		ft_swap(t_adm *adm, char *s);
+int		ft_push(t_adm *lstfrom, t_adm *lstto, char *s);
+
+// instr_list.c
+
+int		ft_rr(t_adm *adma, t_adm *admb, char *s);
+int		ft_rrr(t_adm *adma, t_adm *admb, char *s);
+int		ft_ss(t_adm *adma, t_adm *admb, char *s);
 
 // Libft
 

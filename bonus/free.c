@@ -6,11 +6,25 @@
 /*   By: iderighe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/20 10:05:09 by iderighe          #+#    #+#             */
-/*   Updated: 2021/11/22 11:26:34 by iderighe         ###   ########.fr       */
+/*   Updated: 2021/11/23 13:03:46 by iderighe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
+
+t_var	ft_init_var(int max_len)
+{
+	t_var	var;
+
+	var.len_a = max_len;
+	var.len_b = 0;
+	var.min = 0;
+	var.max = 0;
+	var.pos_first = -1;
+	var.pos_second = -1;
+	var.max_len = max_len;
+	return (var);
+}
 
 void	ft_free_split(char **str)
 {
@@ -56,28 +70,4 @@ int	ft_free_stack(t_adm **adm, t_arg *arg, int *s_a, int *s_b)
 	if (s_b)
 		free(s_b);
 	return (0);
-}
-
-void	ft_rr(t_adm *adma, t_adm *admb, char *s)
-{
-	ft_rot(adma, NULL);
-	ft_rot(admb, NULL);
-	if (s)
-		write (1, &s[0], 3);
-}
-
-void	ft_rrr(t_adm *adma, t_adm *admb, char *s)
-{
-	ft_revrot(adma, NULL);
-	ft_revrot(admb, NULL);
-	if (s)
-		write (1, &s[0], 4);
-}
-
-void	ft_ss(t_adm *adma, t_adm *admb, char *s)
-{
-	ft_swap(adma, NULL);
-	ft_swap(admb, NULL);
-	if (s)
-		write (1, &s[0], 3);
 }

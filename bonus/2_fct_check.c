@@ -6,7 +6,7 @@
 /*   By: iderighe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 10:49:56 by iderighe          #+#    #+#             */
-/*   Updated: 2021/11/22 10:36:31 by iderighe         ###   ########.fr       */
+/*   Updated: 2021/11/23 10:50:18 by iderighe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,7 +101,6 @@ int	ft_check_minmax(t_arg *arg, int k)
 	free(tmp);
 	return (1);
 }
-
 
 /*int	ft_check_sort(int *s_a, t_var var)
 {

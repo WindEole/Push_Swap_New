@@ -6,7 +6,7 @@
 #    By: iderighe <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/09 11:35:21 by iderighe          #+#    #+#              #
-#    Updated: 2021/11/22 14:08:31 by iderighe         ###   ########.fr        #
+#    Updated: 2021/11/23 13:12:46 by iderighe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,6 +28,7 @@ SRCS	=	1_main.c \
 			instr_revrotate.c \
 			instr_loops.c \
 			instr_list.c \
+			instr_list_suite.c \
 			lib_utils.c \
 			lib_utils_split.c \
 			lib_utils_strjoin.c \
@@ -38,7 +39,7 @@ CC		=	clang
 
 RM		=	rm -f
 
-CFLAGS	=	-Wall -Wextra -Werror -fsanitize=address -g3
+CFLAGS	=	-Wall -Wextra -Werror # -fsanitize=address -g3
 
 
 all		:	$(NAME)
@@ -71,6 +72,7 @@ SRCS_C	=	bonus/1_main.c \
 			bonus/5_algo_500_1_list.c \
 			bonus/free.c \
 			bonus/instr_list.c \
+			bonus/instr_list_suite.c \
 			bonus/lib_utils.c \
 			bonus/lib_utils_split.c \
 			bonus/lib_utils_strjoin.c \
