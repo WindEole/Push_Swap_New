@@ -6,7 +6,7 @@
 /*   By: iderighe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 10:49:56 by iderighe          #+#    #+#             */
-/*   Updated: 2021/11/21 16:35:28 by iderighe         ###   ########.fr       */
+/*   Updated: 2021/11/25 09:56:21 by iderighe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,38 +101,3 @@ int	ft_check_minmax(t_arg *arg, int k)
 	free(tmp);
 	return (1);
 }
-
-/*
-int	ft_check_sort(int *s_a, t_var var)
-{
-	int	i;
-	int	j;
-
-	i = 0;
-	while (i < var.max_len - 1)
-	{
-		if (s_a[i] > s_a[i + 1])
-		{
-			printf(RED"KO ! You should get your code straight !"RESET
-			YELLOW" nb total d'operation = %d"RESET"\n", var.add);
-			j = 0;
-			while (j < var.max_len)
-		{
-printf(RED"s_a[%d] = %d"RESET"\n", j, s_a[j]);
-				j++;
-			}
-			return (1);
-		}
-		else
-			i++;
-	}
-	printf(GREEN"OK ! Congratulations, your algorithme worked !"RESET
-	YELLOW" nb total d'operation = %d"RESET"\n", var.add);
-	i = 0;
-	while (i < var.max_len)
-	{
-printf(GREEN"s_a[%d] = %d"RESET"\n", i, s_a[i]);
-		i++;
-	}
-	return (0);
-}*/

@@ -6,7 +6,7 @@
 /*   By: iderighe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/10 12:48:58 by iderighe          #+#    #+#             */
-/*   Updated: 2021/11/23 18:17:33 by iderighe         ###   ########.fr       */
+/*   Updated: 2021/11/25 14:03:32 by iderighe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,6 @@ static int	ft_stack_to_list(int *s_a, int *s_b, t_var *var)
 	t_adm	*adm[2];
 	t_dll	*now[3];
 
-	adm[0] = NULL;
-	adm[1] = NULL;
 	dll = NULL;
 	adm[0] = ft_list_init_a(adm[0], dll, s_a[0]);
 	adm[1] = ft_list_init_b(adm[1]);
@@ -89,7 +87,6 @@ static int	ft_parsing(int *s_a, int *s_b, t_arg *arg, t_var *var)
 		free(s_b);
 		return (1);
 	}
-//printf(RED"var->len_a = [%d], var->min = [%d], var->max[%d]"RESET"\n", var->len_a, var->min, var->max);
 	if (var->len_a <= 3)
 		ft_algo_2_3(s_a, var);
 	else if (var->len_a > 3 && var->len_a <= 5)

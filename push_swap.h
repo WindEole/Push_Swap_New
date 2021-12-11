@@ -6,7 +6,7 @@
 /*   By: iderighe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 11:47:11 by iderighe          #+#    #+#             */
-/*   Updated: 2021/11/23 12:33:23 by iderighe         ###   ########.fr       */
+/*   Updated: 2021/11/25 09:58:16 by iderighe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,23 +73,18 @@ int		ft_check_init_sort(int *s_a, t_var var);
 int		ft_check_reverse_sort(int *s_a, t_var *var);
 int		ft_check_dupl(t_arg *arg);
 int		ft_check_minmax(t_arg *arg, int k);
-//int		ft_check_sort(int *s_a, t_var var);
 
 // 3_stack_parse.c
 
 t_var	ft_init_var(int max_len);
 int		ft_create_stack(t_arg *arg, t_var *var);
 
-// 4_algo_to5.c
+// 4_algo_to3.c et 4_algo_to5.c
 
 void	ft_algo_2_3(int *s_a, t_var *var);
 void	ft_algo_4_5(int *s_a, int *s_b, t_var *var);
 
 // 5_algo_500_1_global.c
-
-//int		ft_algo_big_numbers(int *s_a, int *s_b, t_var *var);
-//void	ft_loop_browse(int *s_a, int *s_b, int *index_sa, t_var *var);
-//int		ft_stack_to_list(int *s_a, int *s_b, t_var *var);
 
 t_adm	*ft_list_init_b(t_adm *adm);
 t_adm	*ft_list_init_a(t_adm *adm, t_dll *dll, int first);
@@ -101,26 +96,12 @@ void	ft_create_index(t_adm *adm);
 
 void	ft_tri(t_adm *adma, t_adm *admb, t_dll **now, int x);
 
-/*
-// 5_algo_500_2_index.c
-
-//int		ft_create_index(int *s_a, int *s_b, t_var *var);
-
-int		ft_create_new_index(int *s_a, t_var *var);
-
-// 5_algo_500_3_move.c
-
-void	ft_move_to_top_a(int *s_a, int *s_b, t_var *var);
-
-// 5_algo_500_4_posb.c
-
-int		ft_define_pos_in_b(int xa, int *s_b, t_var *var);*/
-
 // free.c
 
 void	ft_free_split(char **str);
 void	ft_free_list(t_adm *adm);
 int		ft_free_stack(t_adm **adm, t_arg *arg, int *s_a, int *s_b);
+//int		ft_check_sort(int *s_a, t_var var);
 
 // instr_swap_push.c
 

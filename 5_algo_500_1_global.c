@@ -6,7 +6,7 @@
 /*   By: iderighe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/23 16:58:59 by iderighe          #+#    #+#             */
-/*   Updated: 2021/11/21 18:32:37 by iderighe         ###   ########.fr       */
+/*   Updated: 2021/11/25 11:58:11 by iderighe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,10 @@ t_adm	*ft_list_init_a(t_adm *adm, t_dll *dll, int first)
 	dll = malloc(sizeof(*dll));
 	if (adm == NULL || dll == NULL)
 	{
+		if (dll != NULL)
+			free(dll);
+		if (adm != NULL)
+			free(adm);
 		write(2, "Error\n", 6);
 		return (NULL);
 	}

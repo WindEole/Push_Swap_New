@@ -6,7 +6,7 @@
 #    By: iderighe <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/09 11:35:21 by iderighe          #+#    #+#              #
-#    Updated: 2021/11/23 13:12:46 by iderighe         ###   ########.fr        #
+#    Updated: 2021/11/25 13:35:59 by iderighe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,7 @@ NAME	=	push_swap
 SRCS	=	1_main.c \
 			2_fct_check.c \
 			3_stack_parse.c \
+			4_algo_to3.c \
 			4_algo_to5.c \
 			5_algo_500_1_global.c \
 			5_algo_500_2_tri.c \
@@ -39,7 +40,7 @@ CC		=	clang
 
 RM		=	rm -f
 
-CFLAGS	=	-Wall -Wextra -Werror # -fsanitize=address -g3
+CFLAGS	=	-Wall -Wextra -Werror #-fsanitize=address -g3
 
 
 all		:	$(NAME)
